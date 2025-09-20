@@ -20,7 +20,7 @@ export default function SignupPage() {
       setLoading(true);
       const response = await axios.post("/api/users/signup", user);
       console.log("Signup success", response.data);
-      router.push("/login");
+      router.push("/Login");
     } catch (error: any) {
       console.log("Signup failed", error.message);
       toast.error(error.message);
@@ -101,7 +101,7 @@ export default function SignupPage() {
 
         <p className="mt-4 text-sm">
           Already have an account?{" "}
-          <Link href="/login" className="text-blue-400 hover:underline">
+          <Link href="/Login" className="text-blue-400 hover:underline">
             Login here
           </Link>
         </p>
