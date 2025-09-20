@@ -5,7 +5,7 @@ import type { NextRequest } from 'next/server'
 export function middleware(request: NextRequest) {
   const path = request.nextUrl.pathname
 
-  const isPublicPath = path === '/login' || path === '/signup' || path === '/verifyemail'
+  const isPublicPath = path === '/Login' || path === '/signup' || path === '/verifyemail'
 
   const token = request.cookies.get('token')?.value || ''
 
@@ -14,7 +14,7 @@ export function middleware(request: NextRequest) {
   }
 
   if (!isPublicPath && !token) {
-    return NextResponse.redirect(new URL('/login', request.nextUrl))
+    return NextResponse.redirect(new URL('/Login', request.nextUrl))
   }
 
   //if no if statement satisfy the route will be allowed.
@@ -28,7 +28,7 @@ export const config = {
   matcher: [
     '/',
     '/profile',
-    '/login',
+    '/Login',
     '/signup',
     '/verifyemail'
   ]
